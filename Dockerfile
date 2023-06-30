@@ -1,9 +1,9 @@
-FROM alpine:3.17.2
+FROM alpine:3.18.2
 
-RUN apk update && apk upgrade && apk add --no-cache curl && rm /var/cache/apk/*
+RUN apk update && apk upgrade && apk add --no-cache curl=8.1.2-r0 && rm /var/cache/apk/*
 
-RUN curl -s https://releases.hashicorp.com/terraform/1.3.9/terraform_1.3.9_linux_amd64.zip -o terraform_1.3.9_linux_amd64.zip && \
-  unzip terraform_1.3.9_linux_amd64.zip && \
+RUN curl -s https://releases.hashicorp.com/terraform/1.5.2/terraform_1.5.2_linux_amd64.zip -o terraform_1.5.2_linux_amd64.zip && \
+  unzip terraform_1.5.2_linux_amd64.zip && \
   mv terraform /usr/bin/terraform && \
   chmod +x /usr/bin/terraform
 
